@@ -1,0 +1,3 @@
+#!/bin/sh
+
+docker build --build-arg GOLANG_VERSION=$GOLANG_VERSION --build-arg JDK_VERSION=$JDK_VERSION --build-arg UBUNTU_VERSION=$UBUNTU_VERSION -t $IMAGE_NAME .
