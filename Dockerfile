@@ -6,15 +6,15 @@ ARG GOLANG_VERSION
 ARG JDK_VERSION
 
 ARG PROTOC_KOTLIN_VERSION=0.1.4
-ARG PROTOC_KOTLIN_FILENAME=protoc-gen-grpc-kotlin-$(PROTOC_KOTLIN_VERSION)-linux-x86_64.exe
-ARG PROTOC_KOTLIN_DOWNLOAD_URL=https://repo1.maven.org/maven2/io/grpc/protoc-gen-grpc-kotlin/$(PROTOC_KOTLIN_VERSION)/$(PROTOC_KOTLIN_FILENAME)
+ARG PROTOC_KOTLIN_FILENAME=protoc-gen-grpc-kotlin-${PROTOC_KOTLIN_VERSION}-linux-x86_64.exe
+ARG PROTOC_KOTLIN_DOWNLOAD_URL=https://repo1.maven.org/maven2/io/grpc/protoc-gen-grpc-kotlin/${PROTOC_KOTLIN_VERSION}/${PROTOC_KOTLIN_FILENAME}
 
 ARG PROTOC_JAVA_VERSION=1.30.2
-ARG PROTOC_JAVA_FILENAME=protoc-gen-grpc-java-$(PROTOC_JAVA_VERSION)-linux-x86_64.exe
-ARG PROTOC_JAVA_DOWNLOAD_URL=https://repo1.maven.org/maven2/io/grpc/protoc-gen-grpc-java/$(PROTOC_JAVA_VERSION)/$(PROTOC_JAVA_FILENAME)
+ARG PROTOC_JAVA_FILENAME=protoc-gen-grpc-java-${PROTOC_JAVA_VERSION}-linux-x86_64.exe
+ARG PROTOC_JAVA_DOWNLOAD_URL=https://repo1.maven.org/maven2/io/grpc/protoc-gen-grpc-java/${PROTOC_JAVA_VERSION}/${PROTOC_JAVA_FILENAME}
 
 ARG PROTOC_LINUX_VERSION=3.11.4
-ARG PROTOC_LINUX_ZIP=protoc-$(PROTOC_LINUX_VERSION)-linux-x86_64.zip
+ARG PROTOC_LINUX_ZIP=protoc-${PROTOC_LINUX_VERSION}-linux-x86_64.zip
 
 RUN apt-get update 
 RUN apt-get install -y --no-install-recommends unzip curl make git openssh-client rsync
