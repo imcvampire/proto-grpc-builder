@@ -24,7 +24,7 @@ RUN apt-get install -y --no-install-recommends openjdk-${JDK_VERSION}-jdk
 ENV GOPATH /go
 ENV PATH $GOPATH/bin:/usr/local/go/bin:$PATH
 
-RUN curl -OL https://github.com/protocolbuffers/protobuf/releases/download/v$(PROTOC_LINUX_VERSION)/$(PROTOC_LINUX_ZIP) && \
+RUN curl -OL https://github.com/protocolbuffers/protobuf/releases/download/v${PROTOC_LINUX_VERSION}/${PROTOC_LINUX_ZIP} && \
   unzip -o ${PROTOC_LINUX_ZIP} -d /usr/local bin/protoc && \
 	unzip -o ${PROTOC_LINUX_ZIP} -d /usr/local 'include/*' && \
 	rm -f ${PROTOC_LINUX_ZIP}
