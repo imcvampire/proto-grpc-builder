@@ -1,9 +1,7 @@
-ARG UBUNTU_VERSION
-
-FROM ubuntu:${UBUNTU_VERSION}
-
 ARG GOLANG_VERSION
 ARG JDK_VERSION
+
+FROM golang:${GOLANG_VERSION}
 
 ARG PROTOC_KOTLIN_VERSION=0.1.4
 ARG PROTOC_KOTLIN_FILENAME=protoc-gen-grpc-kotlin-${PROTOC_KOTLIN_VERSION}-linux-x86_64.exe
@@ -18,12 +16,7 @@ ARG PROTOC_LINUX_ZIP=protoc-${PROTOC_LINUX_VERSION}-linux-x86_64.zip
 
 RUN apt-get update 
 RUN apt-get install -y --no-install-recommends unzip curl make git openssh-client rsync
-RUN apt-get install -y --no-install-recommends golang-${GOLANG_VERSION}-go
 RUN apt-get install -y --no-install-recommends openjdk-${JDK_VERSION}-jdk
-
-ENV GOPATH /go
-ENV PATH /go/bin:/usr/local/go/bin:$PATH
-RUN export PATH=/go/bin:/usr/local/go/bin:$PATH
 
 RUN curl -OL https://github.com/protocolbuffers/protobuf/releases/download/v${PROTOC_LINUX_VERSION}/${PROTOC_LINUX_ZIP} && \
   unzip -o ${PROTOC_LINUX_ZIP} -d /usr/local bin/protoc && \
