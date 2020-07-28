@@ -22,6 +22,7 @@ RUN apt-get install -y --no-install-recommends golang-${GOLANG_VERSION}-go
 RUN apt-get install -y --no-install-recommends openjdk-${JDK_VERSION}-jdk
 
 ENV GOPATH /go
+ENV PATH /go/bin:/usr/local/go/bin:$PATH
 RUN export PATH=/go/bin:/usr/local/go/bin:$PATH
 
 RUN curl -OL https://github.com/protocolbuffers/protobuf/releases/download/v${PROTOC_LINUX_VERSION}/${PROTOC_LINUX_ZIP} && \
