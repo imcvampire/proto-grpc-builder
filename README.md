@@ -1,7 +1,5 @@
 # proto-grpc-builder
-A docker image with latest stack for building Protobuf and GRPC code 
-
-https://hub.docker.com/r/imcvampire/proto-grpc-builder
+A docker image with the latest stack for building Protobuf and GRPC code 
 
 ### Included tools 
 - protoc 
