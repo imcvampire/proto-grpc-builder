@@ -8,4 +8,4 @@ A docker image with latest stack for building Protobuf and GRPC code
 - protoc-gen-go-grpc
 - protoc-gen-validate
 - protoc-gen-grpc-java
-- protoc-gen-grpc-k
+- protoc-gen-grpc-kotlin
